@@ -1,3 +1,4 @@
+sudo gpasswd -a $USER input
 sudo apt install git python3 python3-setuptools xdotool python3-gi libinput-tools python-gobject wmctrl
 mkdir tmp
 cd tmp
