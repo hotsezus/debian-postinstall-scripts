@@ -12,3 +12,4 @@ cd gestures
 sudo python3 setup.py install
 cd ../../
 sudo rm -R tmp
+wget -O /home/$USER/.config/libinput-gestures.conf https://raw.githubusercontent.com/AlexDerbenew/debian_postinstall_scripts/master/Elementary_OS/libinput-gestures.conf
