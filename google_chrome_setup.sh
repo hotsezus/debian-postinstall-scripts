@@ -1,5 +1,5 @@
 echo "Google Chrome Installation"
-TEMP_DEB="$(mktemp)" &&
-wget -O "$TEMP_DEB" 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' &&
-sudo dpkg -i "$TEMP_DEB"
-rm -f "$TEMP_DEB"
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb https://dl-ssl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable -y
