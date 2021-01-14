@@ -18,8 +18,13 @@ sudo update-grub
 sudo touch /etc/initramfs-tools/conf.d/resume
 echo "RESUME=UUID=${SWAP_UUID} resume_offset=${SWAP_OFFSET}" | sudo tee -a /etc/initramfs-tools/conf.d/resume
 sudo update-initramfs -u -k all
-sudo touch /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-echo "[Re-enable hibernate by default]" | sudo tee -a /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-echo "Identity=unix-user:*" | sudo tee -a /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-echo "Action=org.freedesktop.login1.*" | sudo tee -a /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-echo "ResultActive=yes" | sudo tee -a /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+echo "[Enable hibernate in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Enable hibernate in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
+ResultActive=yes" | sudo tee -a /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+
