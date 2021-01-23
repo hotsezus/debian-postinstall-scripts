@@ -9,9 +9,9 @@ if sudo cat /etc/fstab | grep "/swapfile"; then
 	echo "No need to update fstab"
 else
 	echo "Updating fstab"
-	echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
+	echo '/swapfile none swap defaults,discard 0 0' | sudo tee -a /etc/fstab
 fi
-SWAP_UUID="$(sudo findmnt -no SOURCE,UUID -T /swapfile | cut -d' ' -f2)"
+SWAP_UUID="$(sudo findmnt -no UUID -T /swapfile)"
 SWAP_OFFSET="$(sudo swap-offset /swapfile | cut -d' ' -f4)"
 sudo rpl "quiet splash" "quiet splash resume=UUID=${SWAP_UUID} resume_offset=${SWAP_OFFSET}" /etc/default/grub
 sudo update-grub
