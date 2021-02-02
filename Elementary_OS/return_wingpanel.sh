@@ -1,4 +1,4 @@
-sudo apt install software-properties-common
+sudo apt install -y --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:yunnxx/elementary
 sudo apt install -y --no-install-recommends indicator-application wingpanel-indicator-ayatana rpl
 sudo rpl "OnlyShowIn=Unity;GNOME;" "OnlyShowIn=Unity;GNOME;Pantheon;" /etc/xdg/autostart/indicator-application.desktop
