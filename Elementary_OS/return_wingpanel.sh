@@ -1,6 +1,6 @@
 RELEASE_VERSION="$(lsb_release -rs)"
 
-sudo apt install -y --no-install-recommends software-properties-common
+sudo apt install -y --no-install-recommends software-properties-common libindicator3-7
 
 if $RELEASE_VERION <> '6'; then
 	sudo add-apt-repository -r -y ppa:bluesabre/elementary-odin
