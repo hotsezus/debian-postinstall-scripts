@@ -5,7 +5,7 @@ sudo apt install -y --no-install-recommends software-properties-common libglib2.
 if $RELEASE_VERION <> '6'; then
 	sudo apt install -y --no-install-recommends libwingpanel-dev indicator-application
 	wget https://github.com/Lafydev/wingpanel-indicator-ayatana/raw/master/com.github.lafydev.wingpanel-indicator-ayatana_2.0.8_odin.deb
-	sudo dpkg -i com.github.lafydev.wingpanel-indicator-ayatana_2.0.7_odin.deb
+	sudo dpkg -i com.github.lafydev.wingpanel-indicator-ayatana_2.0.8_odin.deb
 else
 	sudo apt install -y --no-install-recommends indicator-application libwingpanel-2.0-dev
 	wget https://github.com/Lafydev/wingpanel-indicator-ayatana/raw/master/com.github.lafydev.wingpanel-indicator-ayatana_2.0.7_amd64.deb
