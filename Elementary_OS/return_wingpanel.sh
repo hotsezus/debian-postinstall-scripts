@@ -1,6 +1,6 @@
 RELEASE_VERSION="$(lsb_release -rs)"
 
-sudo apt install -y --no-install-recommends software-properties-common libglib2.0-dev libgranite-dev libindicator3-dev 
+sudo apt install -y --no-install-recommends curl software-properties-common libglib2.0-dev libgranite-dev libindicator3-dev 
 
 if $RELEASE_VERION <> '6'; then
 	sudo apt install -y --no-install-recommends libwingpanel-dev indicator-application
