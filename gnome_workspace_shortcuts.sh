@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Disabling [Super + 0..9] dock switch-to-application shortcuts"
-gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
+gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false 2> /dev/null
 gsettings set org.gnome.shell.keybindings switch-to-application-1 []
 gsettings set org.gnome.shell.keybindings switch-to-application-2 []
 gsettings set org.gnome.shell.keybindings switch-to-application-3 []
