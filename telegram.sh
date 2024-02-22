@@ -10,9 +10,9 @@ sudo rm -Rf /usr/share/applications/telegram.desktop > /dev/null 2>&1
 echo 'Identify Machine Type'
 # Identify Machine Type
 if [ ${MACHINE_TYPE} == 'x86_64' ]; then
-	wget "https://telegram.org/dl/desktop/linux" -O /tmp/telegram.tar.xz &&
+	wget "https://telegram.org/dl/desktop/linux" -O /tmp/telegram.tar.xz
 else
-	wget "https://telegram.org/dl/desktop/linux32" -O /tmp/telegram.tar.xz &&
+	wget "https://telegram.org/dl/desktop/linux32" -O /tmp/telegram.tar.xz
 fi
 
 # Extract the files
