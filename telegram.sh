@@ -1,3 +1,3 @@
-wget --show-progress -qO- https://github.com/telegramdesktop/tdesktop/releases/download/v2.5.1/tsetup.2.5.1.tar.xz | sudo tar xJ -C /opt/ &&
+curl -s https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest | grep "tsetup.*tar.xz" | cut -d : -f 2,3 | tr -d \" | wget -qi - | sudo tar xJ -C /opt/ &&
 sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop &&
 telegram-desktop > /dev/null 2>&1
